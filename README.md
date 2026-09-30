@@ -1,102 +1,91 @@
-# Rock Go Crunch — Beta 1.0
+# Rockhound
 
-**Rock Go Crunch** is a mobile-first browser game about mining, prospecting, processing minerals, completing a geology museum, and gradually automating the work you have already mastered.
+*rock go crunch.*
 
-The core loop is simple: **dig → discover → process → donate or sell → upgrade → go deeper**.
+**Rockhound** is a small browser-based mining, collecting, and museum-completion game. Dig through a fictional composite mine, follow mineral veins, use prospecting tools to narrow down interesting areas, process what you find, and build out a museum of minerals, ores, metals, fossils, and historical artifacts.
 
-The mine is intentionally a fictional composite mine. Mineral names, chemistry, processing relationships, and museum facts are grounded in real geology and gemology, but the game does not pretend that every included material would naturally occur together in one real deposit.
+The game is designed as a finite, curated incremental experience rather than an endless prestige loop. Progress gradually replaces repetitive work with useful automation, while deeper mining introduces genuinely new things to discover.
 
-## Beta 1.0
+## Beta 1.1
 
-Beta 1.0 marks the point where the main gameplay loop is considered stable enough for broader playtesting. The focus now shifts toward pacing, balance, content length, clarity, and polish.
+Beta 1.1 is the first major content expansion.
 
-Changes from v3.1 include:
+### New depth
+**Depth 4 — Crystal Veins** adds:
+- Rose Quartz
+- Malachite
+- Ruby
+- Emerald
+- Galena → Lead
+- Sphalerite → Zinc
+- Brachiopod fossil
+- Old Drill Bit artifact
 
-- **Beta 1.0** branding throughout the game
-- a quieter **Auto-process** control moved to the bottom of each expanded Workbench card
-- a public-facing README focused on the game rather than repository setup
-- the v3.1 mastery, museum, Sell All, scanner, and visual-readability improvements carried forward unchanged
+Older depths also received new finds:
+- Crinoid Stem fossil
+- Worn Survey Marker
 
-## Mining and prospecting
+### Metal detector
+A new **Metal Detector** can be unlocked after reaching Depth 2.
 
-Each rock face is a 10×10 grid containing isolated finds, small veins, large veins, fossils, and historical artifacts.
+It works differently from the area scanner:
+- one whole-face sweep per rock face
+- highlights broad, intentionally imprecise metallic signal zones
+- can help locate metal-bearing targets and some historical artifacts
+- does not identify the exact item or exact tile
 
-Mining is not completely blind. Some rock faces contain subtle geological tells that suggest promising places to begin. The scanner adds a second layer of prospecting:
+### Achievements
+Beta 1.1 adds the first **24 achievements**.
 
-- each scan covers a 3×3 area
-- scanned tiles stay marked for the current rock face
-- overlapping scans accumulate
-- a hidden occupied tile scanned twice gains a very faint generic density anomaly
-- the anomaly does not reveal the identity or colour of the hidden find
-- early scanner levels report chemistry or mineral-family information
-- later scanner upgrades provide more precise identification
-- additional upgrades increase scans per rock face
+Some reward normal progression. Others notice unusual play, geology relationships, scanner habits, lucky moments, and a few things that are deliberately not explained in advance.
 
-Pick durability and scanner uses reset whenever a fresh rock face is started. There are no real-time energy timers.
+### Expanded progression
+- Depth progression now extends through four mine levels
+- a new **Master Lapidary** workshop tier handles ruby and emerald
+- the pick upgrade path has been extended
+- prices and costs have been adjusted around the larger four-depth game
+- older depths remain useful for specific fossils, artifacts, and collection targets
 
-## Museum and mastery
+## Core systems
 
-The museum is the collection heart of the game. Minerals and ores have visible specimen slots, with facts displayed directly beneath each collected form.
+### Mining
+Each rock face is a fixed 10×10 grid. Finds appear as isolated specimens, small veins, and occasional large veins. A few subtle geological tells can suggest where to begin without revealing the answer.
 
-For processable minerals, the usual collection path is:
+### Area scanner
+The scanner analyzes a 3×3 area.
 
-**Raw → Tumbled → Cut**
+Early scanner levels report chemistry rather than exact mineral names. Scanned areas remain visibly marked, and scanning the same tile twice can reveal a faint generic density anomaly when something is hidden behind it.
 
-Ores use a simpler natural-ore → refined-metal relationship.
+### Museum and mastery
+The museum contains separate wings for:
+- minerals
+- ores and refined metals
+- fossils
+- historical artifacts
 
-Completing every museum specimen for a material gives that material a gilded mastery state, reveals a bonus discovery fact, and unlocks **Auto-process** for that material. Automation is earned one collection at a time.
+Mineral and ore sets show their forms side by side with individual facts. Completing a full material set gilds that display, reveals a bonus fact, and unlocks automation for that material.
 
-Mastered minerals and ores are also eligible for the Workbench **Sell All** action. Unmastered materials, fossils, and historical artifacts are left untouched, so bulk selling grows naturally as the museum fills.
+### Processing and automation
+Processing is free.
 
-## Current mine depths
+Early materials are simple to work with, while later finds require better equipment. Once a processable material is mastered, its **Auto-process** toggle becomes available.
 
-### Depth 1 — Upper Seam
+The Workbench **Sell All** button only sells stock from mastered minerals and ores, so collection progress is never sacrificed for convenience.
 
-- Quartz
-- Amethyst
-- Hematite → Iron
-- Chalcopyrite → Copper
-- rare Trilobite fossil
-- rare Mining Tag artifact
-
-### Depth 2 — Lower Works
-
-Earlier finds continue at different rates, with:
-
-- Garnet
-- Topaz
-- Pyrite
-
-### Depth 3 — Deep Gallery
-
-Earlier finds continue alongside:
-
-- Citrine
-- Calcite
-- Fluorite
-- Aquamarine
-- Sapphire
-- Cassiterite → Tin
-- Ammonite fossil
-- Old Mining Lamp artifact
-
-## Visual language
-
-Related minerals deliberately share visual relationships. Quartz, Amethyst, and Citrine use the same basic crystal silhouette with different colours because they are quartz varieties. Other minerals, ores, fossils, and artifacts use more distinct silhouettes and palettes so they remain readable at small sizes.
-
-A full custom sprite-art pass is planned for a later major version.
-
-## Game philosophy
-
-Rock Go Crunch borrows the satisfying progression structure of incremental and mobile games without pay-to-win mechanics.
-
+## Design principles
 - one in-game currency
 - no premium currency
 - no real-money purchases
-- no energy timers
-- no pay-to-skip
-- processing itself is free
-- better equipment and automation are earned through play
-- deeper does not automatically mean "better"; earlier materials remain relevant
+- no energy timers or real-time recharge
+- no prestige reset
+- common materials remain useful
+- deeper does not automatically mean “strictly better”
+- real geology and gemology are used as inspiration and lightly taught through play
 
-Progress is saved locally in the browser.
+The mine itself is fictional and intentionally combines materials that would not all occur together in one real deposit.
+
+## Status
+
+**Beta 1.1**
+
+Rockhound is still being expanded and balanced. The current beta focuses on the core mining, prospecting, museum, mastery, automation, and progression loop.

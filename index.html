@@ -4,16 +4,16 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <meta name="theme-color" content="#111416" />
-  <title>Rock Go Crunch — Beta 1.0</title>
+  <title>Rockhound — Beta 1.1</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <div class="app-shell">
     <header class="topbar">
       <div>
-        <p class="eyebrow">BETA 1.0</p>
-        <h1>ROCK GO CRUNCH</h1>
-        <p class="subtitle">dig · discover · collect · upgrade</p>
+        <p class="eyebrow">BETA 1.1</p>
+        <h1 id="gameTitle">ROCKHOUND</h1>
+        <p id="gameTagline" class="subtitle">rock go crunch.</p>
       </div>
       <button id="soundToggle" class="icon-button" type="button" aria-label="Toggle sound">🔊</button>
     </header>
@@ -42,6 +42,15 @@
               <button id="scanButton" class="secondary-button scan-button" type="button">Scan area</button>
             </div>
             <div id="surveyReport" class="survey-report"></div>
+          </div>
+
+          <div class="survey-box detector-box">
+            <div class="survey-heading detector-heading">
+              <span class="survey-icon">🧲</span>
+              <div class="scanner-copy"><span class="status-label">Metal detector</span><strong id="detectorTitle">Not unlocked</strong></div>
+              <button id="metalDetectorButton" class="secondary-button scan-button" type="button">Sweep face</button>
+            </div>
+            <div id="detectorReport" class="survey-report"></div>
           </div>
 
           <div id="mineBoard" class="mine-board" aria-label="10 by 10 mine grid"></div>
@@ -76,8 +85,17 @@
           <div><p class="eyebrow">THE COLLECTION</p><h2>Museum</h2></div>
           <p>Each specimen keeps its own fact card. Complete a material set to unlock its mastery fact and automation.</p>
         </div>
-        <div class="collection-progress-card"><div><span class="status-label">Museum completion</span><strong id="museumCount">0 / 38</strong></div><div class="big-meter"><span id="museumMeter"></span></div></div>
+        <div class="collection-progress-card"><div><span class="status-label">Museum completion</span><strong id="museumCount">0 / 58</strong></div><div class="big-meter"><span id="museumMeter"></span></div></div>
         <div id="museumWings" class="museum-wings"></div>
+      </section>
+
+      <section class="panel" data-panel="achievements">
+        <div class="section-heading">
+          <div><p class="eyebrow">ODDITIES & MILESTONES</p><h2>Achievements</h2></div>
+          <p>Some are obvious. Some are not. The game is paying attention.</p>
+        </div>
+        <div class="collection-progress-card"><div><span class="status-label">Unlocked</span><strong id="achievementCount">0 / 24</strong></div><div class="big-meter"><span id="achievementMeter"></span></div></div>
+        <div id="achievementGrid" class="achievement-grid"></div>
       </section>
 
       <section class="panel" data-panel="upgrades">
@@ -85,7 +103,7 @@
         <div class="shop-balance"><span class="status-label">Current balance</span><strong id="shopBalance">0¢</strong></div>
         <div id="upgradeList" class="upgrade-list"></div>
         <div class="design-note"><strong>Fair-play rule</strong><p>Processing is free. Scanner charges and pick durability reset with each fresh rock face. No real-time recharge, premium currency, or pay-to-skip.</p></div>
-        <button id="resetButton" class="danger-button" type="button">Reset Beta 1.0 save</button>
+        <button id="resetButton" class="danger-button" type="button">Reset Beta 1.1 save</button>
       </section>
     </main>
 
@@ -98,6 +116,7 @@
       <button class="nav-button active" type="button" data-target="mine"><span>⛏️</span><small>Mine</small></button>
       <button class="nav-button" type="button" data-target="workbench"><span>🛠️</span><small>Workbench</small></button>
       <button class="nav-button" type="button" data-target="museum"><span>🏛️</span><small>Museum</small></button>
+      <button class="nav-button" type="button" data-target="achievements"><span>🏆</span><small>Achievements</small></button>
       <button class="nav-button" type="button" data-target="upgrades"><span>⬆️</span><small>Upgrades</small></button>
     </nav>
   </div>
